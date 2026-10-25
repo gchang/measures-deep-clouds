@@ -11,7 +11,7 @@ void read_L2Ocean(char *filename,float *lat,float *lon,long *na_amsr,
                   long *nx_amsr,float *clw)
 {
   char sds_name[128];
-  char fname[150];
+  char fname[NCHAR_PATH];
   short *short_tmp=NULL;
   int sd_id, sds_id, sds_index, attr_index;
   int i, status, start[3], edge[3];
@@ -131,7 +131,7 @@ double getAMSR_fileName(char *amsrPath,int year,int mon,int day,int hour,
                       int min,char *amsrFile,int ichar_date)
 {
   FILE *fp=NULL;
-  char filelist[150];
+  char filelist[NCHAR_PATH];
   char tmpfile[60];
   char yyyy[5],mm[3],dd[3],hh[3];
   char *noneStr = "none";

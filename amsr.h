@@ -7,6 +7,7 @@
 #define N_QAFLAG_TYPES_AMSR 10
 #define NCHAR_FNAME_AMSR  38
 #define NCHAR_FNAME_AMSR_TBS 56
+#define NCHAR_PATH       4096  /* room for a full directory path plus file name */
 #define N_DAILY_LONS_AMSR    1440
 #define N_DAILY_LATS_AMSR     720
 #define N_DAILY_VARS_V5_AMSR       6

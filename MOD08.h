@@ -2,6 +2,7 @@
 #define N_MOD08_LONS      360
 #define N_MOD08_LATS      180
 #define NCHAR_FNAME_MOD08  39
+#define NCHAR_PATH       4096  /* room for a full directory path plus file name */
 //#define NCHAR_FNAME_MOD08  40 /*includes trailing character*/
 
 #define FREE(x) if(x) { free(x); x = NULL; }

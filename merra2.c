@@ -11,7 +11,7 @@ Don't need this one because in netCDF-4 files the dimension values are stored as
 /*************
 void read_merra_dim(char *path,char *file,char *dim_name,size_t *dim)
 {
-  char fname[150];
+  char fname[NCHAR_PATH];
   int sd_id, sds_id, sds_index, dim_id;
   int status;
 
@@ -42,7 +42,7 @@ Old MERRA HDF code below here.
 //void read_merra_float(char *path,char *file,char *var_name,float *var)
 int read_merra_float(char *path,char *file,char *var_name,void *var,float *fill)
 {
-  char fname[150];
+  char fname[NCHAR_PATH];
   char tmp[65];
   int sd_id, sds_id, sds_index, dim_id, var_id;
   int status, start[5], edge[5], is_scale, is_offset, is_fill;

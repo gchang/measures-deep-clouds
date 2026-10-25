@@ -11,6 +11,7 @@
 #define N_QA1KM_BYTES       5
 #define NCHAR_FNAME_MOD06  44
 #define NCHAR_FNAME_MOD03  41
+#define NCHAR_PATH       4096  /* room for a full directory path plus file name */
 #define N_IR_BANDS          7
 
 /***********

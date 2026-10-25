@@ -32,7 +32,7 @@ void read_mod08_aerosol_cloud(const char *modPath,char *MOD08file,float *lons,
                               int collection)
 {
   char sds_name[128];
-  char fname[150];
+  char fname[NCHAR_PATH];
   short fill, *tmp=NULL;
   int ilo, ila, i;
   int sd_id, sds_id, sds_index, attr_index;
@@ -273,7 +273,7 @@ char get_MOD08_filename(const char *MOD08_path,const char *list_filename,
                         int year,int doy,char *MOD08_file)
 {
   FILE *fp=NULL;
-  char filelist[150], *s;
+  char filelist[NCHAR_PATH], *s;
   char tmpfile[43];
   char yyyy[5], ddd[4];
   char outfile=0;

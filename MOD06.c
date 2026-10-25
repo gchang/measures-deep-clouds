@@ -23,7 +23,7 @@ void readMOD06(char *modPath,char *mod03path,char *MOD06file,char *MOD03file,
                signed char *cldtop_phase,float *lwp,unsigned char *land_mask)
 {
   char sds_name[128];
-  char fname[150];
+  char fname[NCHAR_PATH];
   signed char *tmpfrac, frac_fill;
   short *tmptemp, *tmppres, *tmpreff, *tmptau, *tmplwp;
   signed short reff_fill, tmp_fill, phs_fill, tau_fill;
@@ -230,7 +230,7 @@ void read_1621_and_reff_diff(char *modPath,char *MOD06file,long *na_1km,
                              float *lwp_1621,float *reff_diff)
 {
   char sds_name[128];
-  char fname[150];
+  char fname[NCHAR_PATH];
   short *tmp;
   signed short fill;
   int sd_id, sds_id, sds_index, attr_index;
@@ -340,7 +340,7 @@ void readMOD03(char *modPath,char *MOD03file,long *na_1km,
                float *lat_1km,float *lon_1km,unsigned char *land_mask)
 {
   char sds_name[128];
-  char fname[150];
+  char fname[NCHAR_PATH];
   int sd_id, sds_id, sds_index;
   int status, start[2], edge[2];
   int rank, dims[2], type, attributes;
@@ -390,7 +390,7 @@ void readMOD03_sensor_angles(char *modPath,char *MOD03file,
                float *sensor_zenith,float *sensor_azimuth)
 {
   char sds_name[128];
-  char fname[150];
+  char fname[NCHAR_PATH];
   short *tmpvar=NULL;
   signed short fill;
   int sd_id, sds_id, sds_index, attr_index;
@@ -458,7 +458,7 @@ void readMOD06_sensor_angles(char *modPath,char *MOD06file,
                float *sensor_zenith,float *sensor_azimuth)
 {
   char sds_name[128];
-  char fname[150];
+  char fname[NCHAR_PATH];
   short *tmpvar=NULL;
   signed short fill;
   int sd_id, sds_id, sds_index, attr_index;
@@ -528,7 +528,7 @@ void readMOD06_1km_cldmask(char *modPath,char *MOD06file,long na_1km,
                            signed char *cloud_mask)
 {
   char sds_name[128];
-  char fname[150];
+  char fname[NCHAR_PATH];
   signed char *masktmp;
   int sd_id, sds_id, sds_index;
   int status, start[3], edge[3];
@@ -588,7 +588,7 @@ void readMOD06_QA_1km(char *modPath,char *MOD06file,long na_1km,
                            signed char *qa_1km)
 {
   char sds_name[128];
-  char fname[150];
+  char fname[NCHAR_PATH];
   signed char *qatmp;
   int sd_id, sds_id, sds_index;
   int status, start[3], edge[3];
@@ -920,7 +920,7 @@ void getFileNames(char *modPath, char *mod02Path, char *yyyyddd,char *hhmm,
                   char *MOD03file,char *MOD04file,char *MOD02file)
 {
   FILE *fp=NULL;
-  char filelist[150];
+  char filelist[NCHAR_PATH];
   char tmpfile[80];
   char *noneStr = "none";
   char tmp_yyyyddd[8], tmp_hhmm[5];
@@ -989,7 +989,7 @@ void readMOD06_IR_tbs(char *modPath,char *MOD06file,long *na_5km,
 {
   FILE *f;
   char sds_name[128];
-  char fname[150];
+  char fname[NCHAR_PATH];
   short *tmpvar=NULL;
   signed short fill;
   int sd_id, sds_id, sds_index, attr_index;
@@ -1110,7 +1110,7 @@ void readMOD06_lwpuncertainty(char *modPath,char *MOD06file,long na_1km,
                               float *lwp_err,float *tau_err)
 {
   char sds_name[128];
-  char fname[150];
+  char fname[NCHAR_PATH];
   short *tmpvar=NULL;
   signed short fill;
   int sd_id, sds_id, sds_index, attr_index;
@@ -1182,7 +1182,7 @@ char get_MOD06_filename(const char *MOD06_path,const char *list_filename,
                         int year,int doy,char *MOD06_file)
 {
   FILE *fp=NULL;
-  char filelist[150], *s;
+  char filelist[NCHAR_PATH], *s;
   char tmpfile[43];
   char yyyy[5], ddd[4];
   char outfile=0;
@@ -1225,7 +1225,7 @@ float get_nearest_MOD06_gran(double jdate,char *MOD06_path,const char *MOD06list
 {
   FILE *fp=NULL;
   char terra_flag=-1;
-  char filelist[150], MOD04file[50], MOD02file[50], *mod02path="none";
+  char filelist[NCHAR_PATH], MOD04file[50], MOD02file[50], *mod02path="none";
   char tmpfile[43];
   char hh[3],mm[3], yyyyddd[8], hhmm[5];
   char yyyy[5], dd[3], ddd[4], mmdd[5];

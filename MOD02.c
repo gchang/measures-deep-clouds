@@ -13,7 +13,7 @@ int readMOD021KM_IR(char *mod02Path,char *mod03Path,char *MOD02file,char *MOD03f
                float *lat_1km,float *lon_1km,float *IR_radiances,float *IR_raduncert,
                unsigned char *land_mask)
 {
-	char fname[150];
+	char fname[NCHAR_PATH];
 	char sds_name[128];
 	unsigned char fill1, *IRuncert=NULL;
 	unsigned short fill2, *IRemiss=NULL;

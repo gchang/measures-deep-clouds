@@ -1,4 +1,5 @@
 #define MERRA_BADFLAG   -9999.
+#define NCHAR_PATH       4096  /* room for a full directory path plus file name */
 #define P_TOP		0.01 //pressure (in hPa) at the top of the model atmosphere
 
 // dimensions for coarse grid, time-averaged fields

@@ -194,17 +194,17 @@ const char *MYD04list = "myd04list";
 int main(int argc, char *argv[])
 {
   FILE *fpo, *fp;
-  char MOD06file[150], modPath[150], amsrfile[150], mod08File[50];
+  char MOD06file[150], modPath[NCHAR_PATH], amsrfile[NCHAR_PATH], mod08File[50];
   char MOD03file[150], MOD02file[150], MOD04filetmp[150];
-  char amsrPath[150], outfile[150], tmpfile[60], dir_list[100];
-  char dao_opsfile[150], outPath[150], aodPath[150], maskpath[150];
-  char maskfile[200], mod02Path[150], mod03Path[150], sattest[4];
+  char amsrPath[NCHAR_PATH], outfile[NCHAR_PATH], tmpfile[60], dir_list[100];
+  char dao_opsfile[150], outPath[NCHAR_PATH], aodPath[NCHAR_PATH], maskpath[NCHAR_PATH];
+  char maskfile[NCHAR_PATH], mod02Path[NCHAR_PATH], mod03Path[NCHAR_PATH], sattest[4];
   char yyyyddd[8], ddd[4], hhmm[5], hh[3], mm[3], mn[3];
   char dd[3], yyyy[5], mmdd[5], ccc[4], *s;
-  char gridfile[150], *noneStr = "none", cmd[100], amsrPath_root[50];
-  char merraPath[150], ismodfile, verstr[3], mod08PathRoot[50];
-  char listpath_root[150], amsrlistPath[150], modlistPath[150];
-  char mod08listPath[150], gstr[10];
+  char gridfile[NCHAR_PATH], *noneStr = "none", cmd[100], amsrPath_root[NCHAR_PATH];
+  char merraPath[NCHAR_PATH], ismodfile, verstr[3], mod08PathRoot[NCHAR_PATH];
+  char listpath_root[NCHAR_PATH], amsrlistPath[NCHAR_PATH], modlistPath[NCHAR_PATH];
+  char mod08listPath[NCHAR_PATH], gstr[10];
   double jd, jd0;
   long min_cent, *cloud_datetime=NULL;
   char continue_flag=1, dateline_flag=0;
