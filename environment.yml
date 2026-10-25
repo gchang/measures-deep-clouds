@@ -1,0 +1,23 @@
+# Build and run environment for the deep convective cloud code, from conda-forge.
+#   conda env create -f environment.yml
+#   conda activate measures-deep-clouds
+# Then run ccmeasures_clouds_v12 with HDF_INCLUDE and HDF_LIBRARY pointing at
+# $CONDA_PREFIX/include and $CONDA_PREFIX/lib (see README.md).
+name: measures-deep-clouds
+channels:
+  - conda-forge
+dependencies:
+  # compilers called by ccmeasures_clouds_v12 (cc, gcc, gfortran)
+  - c-compiler
+  - fortran-compiler
+  # MODIS and AMSR-E files are HDF4 (-lmfhdf -ldf); same 4.2 series as on Discover
+  - hdf4 4.2.*
+  - libjpeg-turbo   # -ljpeg on the link line
+  - zlib            # -lz on the link line
+  # MERRA-2 files are netCDF-4; nc-config gives the compile and link flags
+  - libnetcdf
+  # Python side: measures_setup.py (file lists, grid bounds) and the monthly join
+  - python=3.11
+  - numpy
+  - pyhdf
+  - nco             # ncrcat joins the per-granule files into monthly files
